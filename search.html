@@ -1,0 +1,14 @@
+<label class="sr-only" for="search">Search: </label>
+<input id="search" ng-model="query" type="text" placeholder="Type here to filter or search" class="form-control"/>
+<table class="table table-striped">
+    <tr>
+        <th><a href="" ng-click="sortField ='TitleNameSortable'; reverse = !reverse">Title</a></th>
+        <th>Type</th>
+        <th><a href="" ng-click="sortField ='ReleaseYear'; reverse = !reverse">Release</a></th>
+    </tr>
+    <tr ng-repeat="title in titles | filter:query | orderBy:sortField:reverse">
+        <td><a href="#/{{title._id}}">{{title.TitleName}}</a></td>
+        <td>{{title.TitleType}}</td>
+        <td>{{title.ReleaseYear}}</td>
+    </tr>
+</table>

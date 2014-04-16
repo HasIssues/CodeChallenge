@@ -1,0 +1,51 @@
+<div id="title" class="bs-docs-header">
+<h1>{{title.TitleName}}</h1>
+<h2>{{title.TitleType}}, {{title.AnimationMode}}</h2>
+</div>
+<p>
+    Genres:
+    <span ng-repeat="genre in title.Genres">
+        {{genre}},
+    </span>
+</p>
+<p>
+    Other Names:
+    <span ng-repeat="other in title.OtherNames">
+        {{other.TitleName}},
+    </span>
+</p>
+<h3>Descriptions</h3>
+<dl ng-repeat="story in title.Storylines">
+    <dt>{{story.Type}}, {{story.Language}}</dt>
+    <dd>{{story.Description}}</dd>
+</dl>
+<h3>Participants</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Participant Type</th>
+        <th>On Screen</th>
+    </tr>
+    <tr ng-repeat="participant in title.Participants">
+        <td>{{participant.Name}}</td>
+        <td>{{participant.RoleType}}</td>
+        <td>{{participant.ParticipantType}}</td>
+        <td>{{participant.IsOnScreen}}</td>
+    </tr>
+</table>
+<h3>Awards</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Award</th>
+        <th>Award For</th>
+        <th>Year</th>
+        <th>Won</th>
+    </tr>
+    <tr ng-repeat="award in title.Awards">
+        <td>{{award.AwardCompany}}</td>
+        <td>{{award.Award}}</td>
+        <td>{{award.AwardYear}}</td>
+        <td>{{award.AwardWon}}</td>
+    </tr>
+</table>
